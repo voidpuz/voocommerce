@@ -1,0 +1,7 @@
+ 1009  python3 manage.py startapp products
+ 1010  python3 manage.py startapp orders
+ 1011  python3 manage.py startapp payments
+ 1012  python3 manage.py makemigrations
+ 1013  python3 manage.py migrate
+ 1014  python3 manage.py makemigrations
+ 1015  python3 manage.py migrate
