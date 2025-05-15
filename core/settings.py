@@ -57,6 +57,7 @@ EXTERNAL_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'jazzmin',
 ]
 
 INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
@@ -110,6 +111,10 @@ DATABASES = {
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
     ),
 }
 
@@ -123,7 +128,8 @@ SWAGGER_SETTINGS = {
             'description': 'JWT Authorization header. Example: Bearer <your_token>',
         },
     },
-    'USE_SESSION_AUTH': False,
+    'USE_SESSION_AUTH': True,
+    # 'PERSIST_AUTH': True
 }
 
 
