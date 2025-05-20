@@ -111,7 +111,7 @@ DATABASES = {
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -128,7 +128,7 @@ SWAGGER_SETTINGS = {
             'description': 'JWT Authorization header. Example: Bearer <your_token>',
         },
     },
-    'USE_SESSION_AUTH': True,
+    'USE_SESSION_AUTH': False,
     # 'PERSIST_AUTH': True
 }
 

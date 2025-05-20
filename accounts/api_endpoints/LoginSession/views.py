@@ -11,6 +11,9 @@ class SessionLoginAPIView(APIView):
         email = request.data.get('email')
         password = request.data.get('password')
 
+        if not email or not password:
+            return JsonResponse({'error': 'Email and password are required'}, status=status.HTTP_400_BAD_REQUEST)
+
         user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
