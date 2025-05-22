@@ -17,6 +17,12 @@ class ProductAdmin(admin.ModelAdmin):
 
     inlines = [ProductVariantInline]
 
+@admin.register(ProductVariant)
+class ProductVariantAdmin(admin.ModelAdmin):
+    list_display = ("id", "product", "size", "color", "price")
+    list_display_links = ("id", "product")
+    search_fields = ("product", "size", "color")
+
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
