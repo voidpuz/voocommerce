@@ -4,9 +4,11 @@ from products.api_endpoints import *
 
 
 urlpatterns = [
-    path('list1/', ProductListAPIView1.as_view(), name="product-list1"),
-    path('list2/', ProductListAPIView2.as_view(), name="product-list2"),
-    path('list3/', ProductListAPIView3.as_view(), name="product-list3"),
+    path('', ProductListAPIView.as_view(), name="product-list"),
+    path('create/', ProductCreateAPIView.as_view(), name="product-create"),
+    path('<str:slug>/', ProductRetrieveAPIView.as_view(), name="product-retrieve"),
+    path('<str:slug>/update/', ProductUpdateAPIView.as_view(), name="product-update"),
+    path('<str:slug>/delete/', ProductDeleteAPIView.as_view(), name="product-delete"),
 
     path('categories/', CategoryListAPIView.as_view(), name="category-list"),
     path('categories/create/', CategoryCreateAPIView.as_view(), name="category-create"),

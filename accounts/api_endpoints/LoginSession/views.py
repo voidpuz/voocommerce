@@ -20,3 +20,6 @@ class SessionLoginAPIView(APIView):
             return JsonResponse({'message': 'Login successful'})
         else:
             return JsonResponse({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+__all__ = ["SessionLoginAPIView"]
