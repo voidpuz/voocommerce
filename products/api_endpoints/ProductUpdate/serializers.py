@@ -1,9 +1,10 @@
 from rest_framework import serializers
 
 from products.models import Product, Category
+from products.utils import slugify
 
 
-class CategoryProductListSerializer(serializers.ModelSerializer):
+class CategoryProductUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = [
@@ -12,15 +13,15 @@ class CategoryProductListSerializer(serializers.ModelSerializer):
             "slug"
         ]
 
-
-class ProductListSerializer(serializers.ModelSerializer):
+class ProductUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = [
-            "id",
             "name",
             "description",
             "brand",
+            "default_images",
+            "category"
         ]
     
     def to_representation(self, instance):
@@ -31,7 +32,12 @@ class ProductListSerializer(serializers.ModelSerializer):
             "brand": instance.brand.name,
             "slug": instance.slug,
             "is_active": instance.is_active,
-            "category": CategoryProductListSerializer(instance.category).data
+            "category": CategoryProductUpdateSerializer(instance.category).data
         }
 
         return instance
+
+    def update(self, instance, validated_data):
+        if "name" in validated_data:
+            validated_data["slug"] = slugify(validated_data["name"])
+        return super().update(instance, validated_data)
