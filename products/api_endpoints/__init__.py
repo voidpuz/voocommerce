@@ -1,9 +1,5 @@
-from .ProductList import *
-from .ProductCreate import *
-from .ProductUpdate import *
-from .ProductDelete import *
-
-from .CategoryList import *
-from .CategoryCreate import *
-from .CategoryUpdate import *
-from .CategoryDelete import *
+from .Brand import *
+from .Category import *
+from .Product import *
+from .Size import *
+from .Color import *
