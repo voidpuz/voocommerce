@@ -3,7 +3,7 @@ from rest_framework.mixins import UpdateModelMixin
 from rest_framework import permissions
 
 from products.models import Product
-from products.api_endpoints.ProductUpdate.serializers import ProductUpdateSerializer
+from products.api_endpoints.Product.ProductUpdate.serializers import ProductUpdateSerializer
 
 
 class ProductUpdateAPIView(GenericAPIView, UpdateModelMixin):
