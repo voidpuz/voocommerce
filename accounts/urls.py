@@ -6,7 +6,10 @@ from accounts.api_endpoints import (
     CartItemsListAPIView,
     CartItemsCreateAPIView,
     CartItemsUpdateAPIView,
-    CartItemsDeleteAPIView
+    CartItemsDeleteAPIView,
+    RequestPasswordResetView, 
+    PasswordResetConfirmView,
+    CheckResetTokenValidView
 )
 
 urlpatterns = [
@@ -16,4 +19,9 @@ urlpatterns = [
     path('cart/cartitems/create/', CartItemsCreateAPIView.as_view(), name="cart-items-create"),
     path('cart/cartitems/<int:pk>/update/', CartItemsUpdateAPIView.as_view(), name="cart-items-update"),
     path('cart/cartitems/<int:pk>/delete/', CartItemsDeleteAPIView.as_view(), name="cart-items-delete"),
+
+    # Password Reset
+    path("request-reset/", RequestPasswordResetView.as_view(), name="request-password-reset"),
+    path("reset-confirm/", PasswordResetConfirmView.as_view(), name="password-reset-confirm"),
+    path("validate-token/", CheckResetTokenValidView.as_view(), name="validate-reset-token"),
 ]
