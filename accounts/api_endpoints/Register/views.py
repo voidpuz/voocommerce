@@ -39,7 +39,7 @@ class RegisterUserAPIView(APIView):
                     intro_text="Click the link below to reset your password.", 
                     email=email, 
                     token=token, 
-                    template="reset_password_email.html", 
+                    template="email/reset_password_email.html", 
                     password=None
                 )
 
@@ -61,7 +61,7 @@ class RegisterUserAPIView(APIView):
             intro_text="Click the link below to reset your password.", 
             email=email, 
             token=token, 
-            template="reset_password_email.html",
+            template="email/reset_password_email.html",
         )
 
         return Response(

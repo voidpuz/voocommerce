@@ -1,8 +1,9 @@
 from django.urls import path
 
 from accounts.api_endpoints import *
+from accounts.template_views import *
 
-urlpatterns = [
+apis = [
     path('register/', RegisterUserAPIView.as_view(), name="register"),
     path('register/confirm/', RegisterConfirmAPIView.as_view(), name="register-confirm"),
     path('login/', SessionLoginAPIView.as_view(), name="login-session"),
@@ -19,3 +20,12 @@ urlpatterns = [
     path('password-reset/request/', PasswordResetRequestAPIView.as_view(), name="password-reset"),
     path('password-reset/confirm/', PasswordResetConfirmAPIView.as_view(), name="password-reset-confirm"),
 ]
+
+template_urls = [
+    path("template/register/", RegisterView.as_view(), name="register-template"),
+    path("template/login/", LoginView.as_view(), name="login-template"),
+    path("template/profile/", ProfileView.as_view(), name="profile-template"),
+    # path("template/reset-password/", PasswordResetView.as_view(), name="reset-password-template"),
+]
+
+urlpatterns = apis + template_urls
