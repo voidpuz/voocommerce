@@ -24,6 +24,7 @@ apis = [
 template_urls = [
     path("template/register/", RegisterView.as_view(), name="register-template"),
     path("template/login/", LoginView.as_view(), name="login-template"),
+    path("template/profile/", ProfileView.as_view(), name="profile-template"),
     # path("template/reset-password/", PasswordResetView.as_view(), name="reset-password-template"),
 ]
 

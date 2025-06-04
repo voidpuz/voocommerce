@@ -37,19 +37,14 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    password = ReadOnlyPasswordHashField(
-        help_text='Raw passwords are not stored, so there is no way to see '
-                  'this user\'s password, but you can change the password '
-                  'using <a href="password/">this form</a>.')
-
     class Meta:
         model = User
-        fields = ('email', 'phone_number', 'first_name', 'last_name', 'password', 'is_active', 'is_staff')
+        fields = ('email', 'phone_number', 'first_name', 'last_name', 'is_active', 'is_staff')
 
 
 class LoginForm(forms.Form):
     email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField()
 
 
 class PasswordResetForm(forms.Form):
