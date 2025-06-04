@@ -26,7 +26,7 @@ class PasswordResetRequestSerializer(serializers.Serializer):
             intro_text="Click the link below to reset your password.", 
             email=self.email, 
             token=token, 
-            template="reset_password_email.html"
+            template="email/reset_password_email.html"
         )
 
 
