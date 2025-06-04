@@ -14,6 +14,7 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
     avatar = models.ImageField(upload_to='avatars', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    is_confirmed = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
