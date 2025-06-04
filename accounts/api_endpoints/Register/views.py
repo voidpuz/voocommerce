@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 
 from accounts.tokens import generate_email_confirm_token, verify_email_confirm_token, generate_temporary_password
 from accounts.email_send import send_email
+from accounts.models import Cart
 from accounts.api_endpoints.Register.serializers import RegisterInputSerializer, ConfirmTokenSerializer
 
 
@@ -54,6 +55,7 @@ class RegisterUserAPIView(APIView):
             )
             
         user = User.objects._create_user(email=email, password=password, is_confirmed=False)
+        Cart.objects.create(user=user)
         token = generate_email_confirm_token(user)
 
         send_email(
