@@ -55,7 +55,6 @@ class RegisterUserAPIView(APIView):
             )
             
         user = User.objects._create_user(email=email, password=password, is_confirmed=False)
-        Cart.objects.create(user=user)
         token = generate_email_confirm_token(user)
 
         send_email(
