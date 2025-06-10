@@ -13,6 +13,7 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
     last_name = models.CharField(max_length=30, null=True, blank=True)
     avatar = models.ImageField(upload_to='avatars', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
+    saved_products = models.ManyToManyField("products.Product", related_name="saved_by_users")
     is_active = models.BooleanField(default=True)
     is_confirmed = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
