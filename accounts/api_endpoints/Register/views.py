@@ -41,7 +41,7 @@ class RegisterUserAPIView(APIView):
                     email=email, 
                     token=token, 
                     template="email/reset_password_email.html", 
-                    password=None
+                    password=new_pass
                 )
 
                 return Response(
