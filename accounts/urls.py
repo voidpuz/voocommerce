@@ -2,6 +2,7 @@ from django.urls import path
 
 from accounts.api_endpoints import *
 from accounts.template_views import *
+from products.api_endpoints import UserReviewsListAPIView, UserCommentsListAPIView
 
 apis = [
     path('register/', RegisterUserAPIView.as_view(), name="register"),
@@ -12,6 +13,10 @@ apis = [
     path('cart/cartitems/create/', CartItemsCreateAPIView.as_view(), name="cart-items-create"),
     path('cart/cartitems/<int:pk>/update/', CartItemsUpdateAPIView.as_view(), name="cart-items-update"),
     path('cart/cartitems/<int:pk>/delete/', CartItemsDeleteAPIView.as_view(), name="cart-items-delete"),
+
+    # reviews and comments list
+    path('profile/reviews/', UserReviewsListAPIView.as_view(), name="user-reviews"),
+    path('profile/comments/', UserCommentsListAPIView.as_view(), name="user-comments"),    
 
     # profile 
     path('profile/update/', ProfileUpdateAPIView.as_view(), name="profile-update"),
