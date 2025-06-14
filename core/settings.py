@@ -62,6 +62,7 @@ EXTERNAL_APPS = [
     'crispy_forms',
     "crispy_bootstrap4",
     "rosetta",
+    "modeltranslation",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
@@ -69,12 +70,12 @@ INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -264,9 +265,9 @@ JAZZMIN_SETTINGS = {
     "use_google_fonts_cdn": True,
     "show_ui_builder": True,
 
-    "changeform_format": "carousel",
+    "changeform_format": "horizontal_tabs",
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
-    # "language_chooser": True,
+    "language_chooser": True,
 }
 
 # Crispy Forms
@@ -306,6 +307,9 @@ LANGUAGES = [
     ("en", _("English")),
     ("ru", _("Russian"))
 ]
+
+# LANGUAGE_CODE = 'en'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 LOCALE_PATHS = [BASE_DIR / "locale"]
 
