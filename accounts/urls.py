@@ -30,6 +30,13 @@ apis = [
     path('cart/cartitems/<int:pk>/update/', CartItemsUpdateAPIView.as_view(), name="cart-items-update"),
     path('cart/cartitems/<int:pk>/delete/', CartItemsDeleteAPIView.as_view(), name="cart-items-delete"),
 
+    # reviews and comments list
+    path('profile/reviews/', UserReviewsListAPIView.as_view(), name="user-reviews"),
+    path('profile/comments/', UserCommentsListAPIView.as_view(), name="user-comments"),
+    
+    path('products/save-unsave/', SaveProductAPIView.as_view(), name="save-unsave-products"),
+    path('products/saved/', SavedProductsListAPIView.as_view(), name="saved-products"),
+
     # profile 
     path('profile/update/', ProfileUpdateAPIView.as_view(), name="profile-update"),
     path('profile/delete/', ProfileDeleteAPIView.as_view(), name="profile-delete"),

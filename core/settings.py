@@ -61,6 +61,8 @@ EXTERNAL_APPS = [
     'jazzmin',
     'crispy_forms',
     "crispy_bootstrap4",
+    "rosetta",
+    "modeltranslation",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
@@ -68,6 +70,7 @@ INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -262,9 +265,9 @@ JAZZMIN_SETTINGS = {
     "use_google_fonts_cdn": True,
     "show_ui_builder": True,
 
-    "changeform_format": "carousel",
+    "changeform_format": "horizontal_tabs",
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
-    # "language_chooser": True,
+    "language_chooser": True,
 }
 
 # Crispy Forms
@@ -294,3 +297,24 @@ LOGGING = {
         },
     },
 }
+
+# I18n
+
+from django.utils.translation import gettext_lazy as _
+
+LANGUAGES = [
+    ("uz", _("Uzbek")),
+    ("en", _("English")),
+    ("ru", _("Russian"))
+]
+
+# LANGUAGE_CODE = 'en'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+LOCALE_PATHS = [BASE_DIR / "locale"]
+
+
+# CELERY settings
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
