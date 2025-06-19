@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from products.models import *
+from products.models import Product, ProductVariant, Brand, Category, Size, Color
 
 
 class ProductVariantInline(admin.TabularInline):

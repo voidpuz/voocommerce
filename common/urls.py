@@ -1,7 +1,16 @@
 from django.urls import path
 
-from common.views import *
-from common.api_endpoints import *
+from common.views import (
+    HomeView,
+    ContactView,
+    BlogView,
+    BlogDetailView,
+    ShoppingCartView,
+)
+from common.api_endpoints import (
+    MediaFileCreateAPIView,
+    MediaFileDestroyAPIView
+)
 
 app_name = "common"
 

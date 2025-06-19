@@ -1,7 +1,24 @@
 from django.urls import path
 
-from accounts.api_endpoints import *
-from accounts.template_views import *
+from accounts.api_endpoints import (
+    RegisterUserAPIView,
+    RegisterConfirmAPIView,
+    SessionLoginAPIView,
+    SessionLogoutAPIView,
+    CartItemsListAPIView,
+    CartItemsCreateAPIView,
+    CartItemsUpdateAPIView,
+    CartItemsDeleteAPIView,
+    ProfileUpdateAPIView,
+    ProfileDeleteAPIView,
+    PasswordResetRequestAPIView,
+    PasswordResetConfirmAPIView
+)
+from accounts.template_views import (
+    RegisterView,
+    LoginView,
+    ProfileView
+)
 
 apis = [
     path('register/', RegisterUserAPIView.as_view(), name="register"),

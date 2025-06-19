@@ -1,4 +1,4 @@
-from django.db.models.signals import post_save, post_delete, post_init, post_migrate
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from .models import Cart, User

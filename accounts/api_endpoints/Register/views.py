@@ -6,7 +6,6 @@ from django.contrib.auth import get_user_model
 
 from accounts.tokens import generate_email_confirm_token, verify_email_confirm_token, generate_temporary_password
 from accounts.email_send import send_email
-from accounts.models import Cart
 from accounts.api_endpoints.Register.serializers import RegisterInputSerializer, ConfirmTokenSerializer
 
 
@@ -30,7 +29,7 @@ class RegisterUserAPIView(APIView):
         existing = User.objects.filter(email=email, is_active=True).first()
         if existing:
             if not existing.is_confirmed:
-                token = generate_email_confirm_token(user)
+                token = generate_email_confirm_token(existing)
                 new_pass = generate_temporary_password()
                 existing.set_password(new_pass)
                 existing.save()

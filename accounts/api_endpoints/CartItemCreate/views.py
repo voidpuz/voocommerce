@@ -1,4 +1,4 @@
-from rest_framework.generics import GenericAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import GenericAPIView
 from rest_framework import permissions
 from rest_framework.response import Response
 
