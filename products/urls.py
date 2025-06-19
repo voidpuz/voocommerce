@@ -1,6 +1,26 @@
 from django.urls import path
 
-from products.api_endpoints import *
+from products.api_endpoints import (
+    ProductListAPIView,
+    ProductCreateAPIView,
+    ProductUpdateAPIView,
+    ProductRetrieveAPIView,
+    ProductDeleteAPIView,
+    BrandListAPIView,
+    BrandUpdateAPIView, 
+    BrandCreateAPIView,
+    BrandDeleteAPIView,
+    BrandRetrieveAPIView,
+    SizeListCreateView,
+    SizeRetrieveUpdateDestroyView,
+    ColorListCreateView,
+    ColorRetrieveUpdateDestroyView,
+    CategoryListAPIView,
+    CategoryRetrieveAPIView,
+    CategoryCreateAPIView,
+    CategoryUpdateAPIView,
+    CategoryDeleteAPIView
+)
 
 
 urlpatterns = [

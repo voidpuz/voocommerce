@@ -1,7 +1,6 @@
-from rest_framework.generics import GenericAPIView, CreateAPIView
+from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import CreateModelMixin
 from rest_framework import permissions
-from rest_framework.response import Response
 
 from products.models import Product
 from products.api_endpoints.Product.ProductCreate.serializers import ProductCreateSerializer

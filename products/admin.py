@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
-from products.models import *
+from products.models import Product, ProductVariant, Brand, Category, Size, Color
 
 
 class ProductVariantInline(admin.TabularInline):
