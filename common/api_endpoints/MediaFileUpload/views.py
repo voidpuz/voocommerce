@@ -9,6 +9,7 @@ class MediaFileCreateAPIView(CreateAPIView):
     """
     Create a new media file
     """
+
     queryset = MediaFile.objects.all()
     serializer_class = MediaFileUploadSerializer
     parser_classes = [MultiPartParser, FormParser]

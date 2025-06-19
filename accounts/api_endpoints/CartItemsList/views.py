@@ -18,5 +18,6 @@ class CartItemsListAPIView(GenericAPIView):
         serializer = self.get_serializer(self.get_queryset(), many=True)
 
         return Response(serializer.data)
-    
+
+
 __all__ = ["CartItemsListAPIView"]

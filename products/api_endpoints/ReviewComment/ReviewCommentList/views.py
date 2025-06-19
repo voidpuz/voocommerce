@@ -4,7 +4,7 @@ from rest_framework import permissions
 from products.models import Review, Comment
 from products.api_endpoints.ReviewComment.ReviewCommentList.serializers import (
     UserReviewsListSerializer,
-    UserCommentsListSerializer
+    UserCommentsListSerializer,
 )
 
 

@@ -1,9 +1,9 @@
 from rest_framework.generics import CreateAPIView
 from rest_framework import permissions
 
-from products.models import Review, Comment
+from products.models import Review
 from products.api_endpoints.ReviewComment.ReviewCommentCreate.serializers import (
-    ReviewCreateSerializer
+    ReviewCreateSerializer,
 )
 
 

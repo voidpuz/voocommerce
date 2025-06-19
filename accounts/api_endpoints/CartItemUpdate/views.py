@@ -13,4 +13,5 @@ class CartItemsUpdateAPIView(GenericAPIView):
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
 
+
 __all__ = ["CartItemsUpdateAPIView"]

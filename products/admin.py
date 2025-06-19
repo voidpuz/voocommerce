@@ -1,7 +1,16 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
-from products.models import Product, ProductVariant, Brand, Category, Size, Color
+from products.models import (
+    Product,
+    ProductVariant,
+    Brand,
+    Category,
+    Size,
+    Color,
+    Review,
+    Comment,
+)
 
 
 class ProductVariantInline(admin.TabularInline):
@@ -17,20 +26,22 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ("is_active",)
 
     fieldsets = (
-        (_("Main"), {
-            'fields': ("brand", "category", "is_active")
-        }),
-        (_("Uzbek"), {
-            'fields': ('name_uz', 'description_uz',)
-        }),
-        (_("English"), {
-            'fields': ('name_en', 'description_en')
-        }),
-        (_("Russian"), {
-            'fields': ('name_ru', 'description_ru')
-        }))
+        (_("Main"), {"fields": ("brand", "category", "is_active")}),
+        (
+            _("Uzbek"),
+            {
+                "fields": (
+                    "name_uz",
+                    "description_uz",
+                )
+            },
+        ),
+        (_("English"), {"fields": ("name_en", "description_en")}),
+        (_("Russian"), {"fields": ("name_ru", "description_ru")}),
+    )
 
     inlines = [ProductVariantInline]
+
 
 @admin.register(ProductVariant)
 class ProductVariantAdmin(admin.ModelAdmin):

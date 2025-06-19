@@ -5,20 +5,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('accounts', '0003_alter_cartitem_cart'),
+        ("accounts", "0003_alter_cartitem_cart"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='is_confirmed',
+            model_name="user",
+            name="is_confirmed",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='cartitem',
-            name='cart',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='cart_items', to='accounts.cart'),
+            model_name="cartitem",
+            name="cart",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.RESTRICT,
+                related_name="cart_items",
+                to="accounts.cart",
+            ),
         ),
     ]

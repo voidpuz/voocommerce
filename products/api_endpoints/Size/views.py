@@ -1,7 +1,4 @@
-from rest_framework.generics import (
-    ListCreateAPIView, 
-    RetrieveUpdateDestroyAPIView
-)
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework import permissions
 from products.models import Size
 from products.api_endpoints.Size.serializers import SizeSerializer

@@ -15,7 +15,7 @@ class MediaFileDestroyAPIView(DestroyAPIView):
         self.perform_destroy(self.get_object())
 
         return Response({"message": "File deleted successfully"}, status=204)
-    
+
     def perform_destroy(self, instance):
         """
         Override to delete the actual file from storage before deleting the record

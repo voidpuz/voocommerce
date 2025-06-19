@@ -4,40 +4,39 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0005_alter_comment_parent_alter_comment_product_and_more'),
+        ("products", "0005_alter_comment_parent_alter_comment_product_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='description_en',
+            model_name="product",
+            name="description_en",
             field=models.TextField(null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='description_ru',
+            model_name="product",
+            name="description_ru",
             field=models.TextField(null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='description_uz',
+            model_name="product",
+            name="description_uz",
             field=models.TextField(null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='name_en',
+            model_name="product",
+            name="name_en",
             field=models.CharField(max_length=255, null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='name_ru',
+            model_name="product",
+            name="name_ru",
             field=models.CharField(max_length=255, null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='name_uz',
+            model_name="product",
+            name="name_uz",
             field=models.CharField(max_length=255, null=True),
         ),
     ]

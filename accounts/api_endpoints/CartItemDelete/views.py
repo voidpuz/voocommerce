@@ -10,5 +10,6 @@ class CartItemsDeleteAPIView(GenericAPIView):
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
-    
+
+
 __all__ = ["CartItemsDeleteAPIView"]

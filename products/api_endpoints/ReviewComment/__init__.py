@@ -1,3 +1,9 @@
-from .ReviewCommentList import *
-from .ReviewCommentCreate import *
-from .ReviewCommentDelete import *
+from .ReviewCommentList import UserReviewsListAPIView
+from .ReviewCommentCreate import ReviewCreateAPIView
+from .ReviewCommentDelete import ReviewDeleteAPIView
+
+__all__ = [
+    "UserReviewsListAPIView",
+    "ReviewCreateAPIView",
+    "ReviewDeleteAPIView",
+]

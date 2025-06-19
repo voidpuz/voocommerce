@@ -1,7 +1,9 @@
 from rest_framework.generics import UpdateAPIView
 
 from products.models import Category
-from products.api_endpoints.Category.CategoryUpdate.serializers import CategoryUpdateSerializer
+from products.api_endpoints.Category.CategoryUpdate.serializers import (
+    CategoryUpdateSerializer,
+)
 
 
 class CategoryUpdateAPIView(UpdateAPIView):

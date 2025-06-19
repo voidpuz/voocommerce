@@ -6,11 +6,7 @@ from products.models import Product, Category
 class CategoryProductListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = [
-            "id",
-            "name",
-            "slug"
-        ]
+        fields = ["id", "name", "slug"]
 
 
 class ProductListSerializer(serializers.ModelSerializer):
@@ -22,7 +18,7 @@ class ProductListSerializer(serializers.ModelSerializer):
             "description",
             "brand",
         ]
-    
+
     def to_representation(self, instance):
         instance = {
             "id": instance.id,
@@ -31,7 +27,7 @@ class ProductListSerializer(serializers.ModelSerializer):
             "brand": instance.brand.name,
             "slug": instance.slug,
             "is_active": instance.is_active,
-            "category": CategoryProductListSerializer(instance.category).data
+            "category": CategoryProductListSerializer(instance.category).data,
         }
 
         return instance

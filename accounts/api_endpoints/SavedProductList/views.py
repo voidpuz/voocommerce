@@ -1,7 +1,9 @@
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
 
-from accounts.api_endpoints.SavedProductList.serializers import SavedProductsListSerializer
+from accounts.api_endpoints.SavedProductList.serializers import (
+    SavedProductsListSerializer,
+)
 
 
 class SavedProductsListAPIView(ListAPIView):

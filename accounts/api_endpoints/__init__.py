@@ -1,31 +1,18 @@
-from .LoginSession import (
-    SessionLoginAPIView
-)
-from .LogoutSession import (
-    SessionLogoutAPIView
-)
-from .CartItemsList import (
-    CartItemsListAPIView
-)
-from .CartItemCreate import (
-    CartItemsCreateAPIView
-)
-from .CartItemUpdate import (
-    CartItemsUpdateAPIView
-)
-from .CartItemDelete import (
-    CartItemsDeleteAPIView
-)
+from .LoginSession import SessionLoginAPIView
+from .LogoutSession import SessionLogoutAPIView
+from .CartItemsList import CartItemsListAPIView
+from .CartItemCreate import CartItemsCreateAPIView
+from .CartItemUpdate import CartItemsUpdateAPIView
+from .CartItemDelete import CartItemsDeleteAPIView
 from .Profile import (
     PasswordResetRequestAPIView,
     PasswordResetConfirmAPIView,
     ProfileDeleteAPIView,
     ProfileUpdateAPIView,
 )
-from .Register import (
-    RegisterUserAPIView,
-    RegisterConfirmAPIView
-)
+from .Register import RegisterUserAPIView, RegisterConfirmAPIView
+from .SaveProduct import SaveProductAPIView
+from .SavedProductList import SavedProductsListAPIView
 
 __all__ = [
     "SessionLoginAPIView",
@@ -39,5 +26,7 @@ __all__ = [
     "PasswordResetRequestAPIView",
     "PasswordResetConfirmAPIView",
     "RegisterUserAPIView",
-    "RegisterConfirmAPIView"
+    "RegisterConfirmAPIView",
+    "SaveProductAPIView",
+    "SavedProductsListAPIView",
 ]

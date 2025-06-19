@@ -3,30 +3,28 @@ from .Brand import (
     BrandListAPIView,
     BrandUpdateAPIView,
     BrandDeleteAPIView,
-    BrandRetrieveAPIView
+    BrandRetrieveAPIView,
 )
 from .Category import (
     CategoryListAPIView,
     CategoryCreateAPIView,
     CategoryUpdateAPIView,
     CategoryDeleteAPIView,
-    CategoryRetrieveAPIView
+    CategoryRetrieveAPIView,
 )
 from .Product import (
-    ProductCreateAPIView, 
+    ProductCreateAPIView,
     ProductListAPIView,
     ProductUpdateAPIView,
     ProductDeleteAPIView,
-    ProductRetrieveAPIView
-    
+    ProductRetrieveAPIView,
 )
-from .Size import (
-    SizeListCreateView,
-    SizeRetrieveUpdateDestroyView
-)
-from .Color import (
-    ColorListCreateView, 
-    ColorRetrieveUpdateDestroyView
+from .Size import SizeListCreateView, SizeRetrieveUpdateDestroyView
+from .Color import ColorListCreateView, ColorRetrieveUpdateDestroyView
+from .ReviewComment import (
+    ReviewCreateAPIView,
+    UserReviewsListAPIView,
+    ReviewDeleteAPIView,
 )
 
 __all__ = [
@@ -48,5 +46,8 @@ __all__ = [
     "SizeListCreateView",
     "SizeRetrieveUpdateDestroyView",
     "ColorListCreateView",
-    "ColorRetrieveUpdateDestroyView"
+    "ColorRetrieveUpdateDestroyView",
+    "ReviewCreateAPIView",
+    "UserReviewsListAPIView",
+    "ReviewDeleteAPIView",
 ]

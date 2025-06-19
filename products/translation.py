@@ -4,4 +4,4 @@ from products.models import Product
 
 @register(Product)
 class ProductTranslationOptions(TranslationOptions):
-    fields = ('name', 'description')
+    fields = ("name", "description")

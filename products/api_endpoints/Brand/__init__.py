@@ -8,5 +8,5 @@ __all__ = [
     "BrandListAPIView",
     "BrandRetrieveAPIView",
     "BrandUpdateAPIView",
-    "BrandDeleteAPIView"
+    "BrandDeleteAPIView",
 ]

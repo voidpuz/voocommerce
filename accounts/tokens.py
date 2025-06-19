@@ -14,6 +14,7 @@ def verify_email_confirm_token(token):
         return int(unsigned)
     except (BadSignature, SignatureExpired):
         return None
-    
+
+
 def generate_temporary_password():
     return signer.sign("temporary")

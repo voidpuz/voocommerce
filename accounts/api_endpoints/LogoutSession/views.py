@@ -6,6 +6,7 @@ from django.http import JsonResponse
 class SessionLogoutAPIView(APIView):
     def post(self, request):
         logout(request)
-        return JsonResponse({'message': 'Logout successful'})
-    
+        return JsonResponse({"message": "Logout successful"})
+
+
 __all__ = ["SessionLogoutAPIView"]

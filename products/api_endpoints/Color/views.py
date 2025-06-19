@@ -1,7 +1,4 @@
-from rest_framework.generics import (
-    ListCreateAPIView, 
-    RetrieveUpdateDestroyAPIView
-)
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework import permissions
 from products.models import Color
 from .serializers import ColorSerializer

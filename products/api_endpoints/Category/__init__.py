@@ -8,5 +8,5 @@ __all__ = [
     "CategoryListAPIView",
     "CategoryRetrieveAPIView",
     "CategoryUpdateAPIView",
-    "CategoryDeleteAPIView"
+    "CategoryDeleteAPIView",
 ]

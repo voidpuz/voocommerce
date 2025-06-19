@@ -7,17 +7,15 @@ from common.views import (
     BlogDetailView,
     ShoppingCartView,
 )
-from common.api_endpoints import (
-    MediaFileCreateAPIView,
-    MediaFileDestroyAPIView
-)
+from common.api_endpoints import MediaFileCreateAPIView, MediaFileDestroyAPIView
 
 app_name = "common"
 
 urlpatterns = [
     path("media/upload/", MediaFileCreateAPIView.as_view(), name="media-upload"),
-    path("media/delete/<int:id>/", MediaFileDestroyAPIView.as_view(), name="media-delete"),
-
+    path(
+        "media/delete/<int:id>/", MediaFileDestroyAPIView.as_view(), name="media-delete"
+    ),
     # templates
     path("", HomeView.as_view(), name="index"),
     path("contact/", ContactView.as_view(), name="contact"),

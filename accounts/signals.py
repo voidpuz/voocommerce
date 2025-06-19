@@ -4,6 +4,7 @@ from django.dispatch import receiver
 from .models import Cart, User
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 
