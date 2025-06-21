@@ -10,6 +10,7 @@ from products.models import (
     Color,
     Review,
     Comment,
+    Story,
 )
 
 
@@ -90,3 +91,10 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ("id", "user__email", "product__name", "text")
     list_display_links = ("id", "user__email")
     search_fields = ("user__email",)
+
+
+@admin.register(Story)
+class StoryAdmin(admin.ModelAdmin):
+    list_display = ("id", "title", "product", "image")
+    list_display_links = ("id", "title")
+    search_fields = ("title", "product")

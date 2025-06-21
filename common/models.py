@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class BaseModel(models.Model):
@@ -14,3 +15,7 @@ class MediaFile(BaseModel):
 
     def __str__(self):
         return self.file.name
+
+    class Meta:
+        verbose_name = _("Media File")
+        verbose_name_plural = _("Media Files")

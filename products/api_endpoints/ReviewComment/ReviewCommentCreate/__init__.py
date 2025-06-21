@@ -1,3 +1,3 @@
-from .views import ReviewCreateAPIView
+from .views import ReviewCreateAPIView, CommentCreateAPIView
 
-__all__ = ["ReviewCreateAPIView"]
+__all__ = ["ReviewCreateAPIView", "CommentCreateAPIView"]
