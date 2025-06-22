@@ -13,7 +13,7 @@ class Order(BaseModel):
     notes = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"Order({self.id})"
+        return f"Order<id={self.id}, price={self.total_price}>"
 
 
 class OrderItem(BaseModel):
@@ -27,4 +27,4 @@ class OrderItem(BaseModel):
     price = models.BigIntegerField(null=False, blank=False)
 
     def __str__(self):
-        return f"OrderItem({self.id})"
+        return f"OrderItem<product_id={self.product_id}>"

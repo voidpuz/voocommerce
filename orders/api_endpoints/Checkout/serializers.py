@@ -13,9 +13,7 @@ class CheckoutSerializer(serializers.Serializer):
     quantity = serializers.IntegerField(write_only=True, required=False)
 
     def create(self, validated_data):
-        print(validated_data)
         created_order = create_order(**validated_data)
-        print(">>>>", created_order)
         if not create_order:
             raise serializers.ValidationError(
                 "Order could not be created: ambiguous source."
