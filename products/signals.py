@@ -19,12 +19,12 @@ def story_post_save(sender, instance, created, **kwargs):
             hour=expire_time.hour,
             day_of_month=expire_time.day,
             month_of_year=expire_time.month,
-            timezone=str(expire_time.tzinfo)
+            timezone=str(expire_time.tzinfo),
         )
         PeriodicTask.objects.create(
             crontab=start_crontab,
             name=f"task_expire_story_{instance.id}",
             task="products.tasks.create_story_expirer_task",
             args=args,
-            one_off=True
+            one_off=True,
         )
