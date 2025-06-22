@@ -19,7 +19,7 @@ class Transaction(BaseModel):
     )
 
     def __str__(self):
-        return f"Transaction({self.id})"
+        return f"Transaction<user={self.user.email}, order={self.order}>"
 
     class Meta:
         verbose_name = _("Transaction")
