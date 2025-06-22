@@ -37,6 +37,9 @@ dependencies = [
     "prompt-toolkit==3.0.51",
     "psycopg2-binary==2.9.10",
     "pyjwt==2.9.0",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "pytest-django>=4.11.1",
     "python-dateutil==2.9.0.post0",
     "python-dotenv==1.1.0",
     "pytz==2025.2",
@@ -53,3 +56,28 @@ dependencies = [
     "vine==5.1.0",
     "wcwidth==0.2.13",
 ]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings.test"
+python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--verbose",
+    "--tb=short",
+    "--cov=myproject",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--reuse-db",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+    "api: marks tests as API tests",
+    "auth: marks tests as authentication related",
+    "db: marks tests that require database access",
+]
+testpaths = ["tests"]
