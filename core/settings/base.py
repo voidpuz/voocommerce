@@ -102,7 +102,8 @@ DATABASES = {
         "PASSWORD": os.getenv("DB_PASSWORD"),
         "HOST": os.getenv("DB_HOST"),
         "PORT": os.getenv("DB_PORT"),
-    }
+        "ATOMIC_REQUESTS": True,
+    },
 }
 
 
@@ -303,3 +304,4 @@ LOCALE_PATHS = [BASE_DIR / "locale"]
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/1"
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
